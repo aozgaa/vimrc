@@ -54,6 +54,11 @@ set background=dark
 " let g:solarized_termcolors=256
 colorscheme solarized
 
+"""""""""""""""""""""" Gvim Font Settings """""""""""""""""
+
+" The number sets the font height
+set guifont=Monospace\ 16
+
 """"""""""""""""""""" General Settings """"""""""""""""""""
 
 "" leader key is space
