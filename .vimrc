@@ -30,10 +30,10 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'Valloric/YouCompleteMe'
 
 "" Rainbow parentheses for lisp
-Plugin 'amdt/vim-niji'
+Plugin 'vim-scripts/vim-niji'
 
 "" matching parentheses editing for lisp
-Plugin 'vim-scripts/paredit.vim'
+" Plugin 'vim-scripts/paredit.vim'
 
 "" Large suite of tools to ease latex editing in vim
 "" (on Github)
