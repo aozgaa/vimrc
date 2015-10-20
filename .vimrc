@@ -42,7 +42,10 @@ Plugin 'vim-scripts/vim-niji'
 Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 
 "" Solarized Color Scheme for Vim -- may require additional config
-Plugin 'altercation/vim-colors-solarized'
+" Plugin 'altercation/vim-colors-solarized'
+
+"" Another colorscheme
+Plugin 'vim-scripts/wombat256.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -50,9 +53,14 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 """""""""""""""""""""" Color scheme """"""""""""""""""""""""
-set background=dark
-" let g:solarized_termcolors=256
-colorscheme solarized
+" set background=dark
+" " let g:solarized_termcolors=256
+" colorscheme solarized
+
+try
+  colorscheme wombat245mod
+catch
+endtry
 
 """""""""""""""""""""" Gvim Font Settings """""""""""""""""
 
