@@ -185,9 +185,13 @@ set foldmethod=marker
 
 " Language Specific Settings {{{
 
-"" send file contents to next pane in tmux
-"" (using for sending text between vim and a scheme repl)
-map ,t :w \| !tmux loadb % && tmux pasteb -t 1
+" "" send file contents to next pane in tmux
+" "" (using for sending text between vim and a scheme repl)
+" map ,t :w \| !tmux loadb % && tmux pasteb -t 1
+
+"" TODO: figure out better repl interop. eg: pipe file contents to repl,
+"" then accept user input.
+"" Or, use in repl-reload (eg: haskell's ':l <filename>' functionality).
 
 augroup languages
     
@@ -216,3 +220,8 @@ let g:Tex_DefaultTargetFormat='pdf'
 " address of YouCompleteMe conf
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 " }}}
+
+" Completion Settings {{{
+" TODO: figure out a clean way to automagically use vim's built-in
+" completion without heavy plugins like ycm.
+"" }}}
