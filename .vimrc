@@ -1,3 +1,9 @@
+" SETUP INSTRUCTIONS {{{
+" 1) Get vundle:
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim ; vim +PluginInstall +qall
+" 2) 
+" }}}
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -70,22 +76,7 @@ filetype plugin indent on    " required
 set guifont=Monospace\ 16
 "" }}}
 
-" General Settings {{{
-
-"" leader key is space
-let mapleader = ' '
-
-"" Bash-style tab completion in command mode
-set wildmenu
-set wildmode=longest,list 
-set wildchar=<Tab>
-
-" set omnifunc=syntaxcomplete#Complete
-
-"" how close cursor is to the top/bottom before the screen scrolls
-""    (up/down)
-set scrolloff=10
-
+" INDENTATION AND TEXT-WRAPPING {{{
 "" insert spaces whenever <Tab> is pressed
 set expandtab
 
@@ -110,23 +101,32 @@ set autoindent
 set smartindent
 
 "" smart indenting for C-family languages
+"" TODO: set this only when opening a c/c++ file.
 set cindent
 
-"" can use <BS> over indents, end-of-lines, and past the beginning of an insert
-set backspace=indent,eol,start
+"" wrap comments
+"" wrap text
+"" format comments using gq
+"" automatic multi-line comments
+"" automatic paragraph indenting
+set formatoptions=c,t,q,r
 
+"" width of line before it is auto-wrapped
+set textwidth=80
+
+" }}}
+
+" COMMAND MODE {{{
 "" print command at the bottom of the screen
 set showcmd
 
-"" print line numbers on the left
-set number
+"" Bash-style tab completion in command mode
+set wildmenu
+set wildmode=longest,list 
+set wildchar=<Tab>
+"" }}}
 
-"" Show cursor position
-set ruler
-
-"" shows the matching parenthesis if it is visible on the screen
-set showmatch
-
+" SEARCH {{{
 "" update seach as you type
 set incsearch
 
@@ -141,29 +141,6 @@ set ignorecase
 
 "" override ignorecase if the search contains capital letters
 set smartcase
-
-"" wrap comments
-"" wrap text
-"" format comments using gq
-"" automatic multi-line comments
-"" automatic paragraph indenting
-set formatoptions=c,t,q,r
-
-"" doesn't save swap files
-set noswapfile
-
-"" width of line before it is auto-wrapped
-set textwidth=80
-
-"" automatically re-read the file if it changed outside the buffer
-" set autoread
-
-nnoremap <F2> :set invpaste paste?<CR>
-set pastetoggle=<F2>
-" set showmode
-
-"" set history
-set viminfo='20,<2000,s10,h
 "" }}}
 
 " FOLDING {{{
@@ -180,6 +157,46 @@ set foldmethod=marker
 "   au BufReadPre * setlocal foldmethod=marker
 "   au BufWinEnter * if &fdm == 'marker' | setlocal foldmethod=manual | endif
 " augroup END
+
+"" }}}
+
+" USER INTERFACE {{{
+"" Cursor distance from {top,bottom} before the screen scrolls {up,down}.
+set scrolloff=10
+
+"" print line numbers on the left
+set number
+
+"" Show cursor position
+set ruler
+
+"" shows the matching parenthesis if it is visible on the screen
+set showmatch
+
+" }}}
+
+" General Settings {{{
+
+"" leader key is space
+let mapleader = ' '
+let g:mapleader = ' '
+
+"" set history
+set viminfo='20,<2000,s10,h
+
+"" can use <BS> over indents, end-of-lines, and past the beginning of an insert
+set backspace=indent,eol,start
+
+"" doesn't save swap files
+set noswapfile
+
+"" Toggle paste mode with <F2>.
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+" set showmode
+
+"" automatically re-read the file if it changed outside the buffer
+" set autoread
 
 "" }}}
 
