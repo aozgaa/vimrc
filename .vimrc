@@ -12,9 +12,6 @@ Plugin 'gmarik/Vundle.vim'
 "" sensible defaults
 Plugin 'tpope/vim-sensible'
 
-"" All-inclusive autocomplete plugin
-Plugin 'Valloric/YouCompleteMe'
-
 "" Rainbow parentheses for lisp
 Plugin 'vim-scripts/vim-niji'
 
@@ -23,6 +20,9 @@ Plugin 'vim-scripts/vim-niji'
 " Plugin 'vim-latex/vim-latex'
 "" (on Sourceforge)
 Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
+
+" "" All-inclusive autocomplete plugin
+" Plugin 'Valloric/YouCompleteMe'
 
 "" matching parentheses editing for lisp
 " Plugin 'vim-scripts/paredit.vim'
@@ -40,9 +40,11 @@ Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 " "" If vim is running inside tmux, allows easy creation of new shell panes
 " Plugin 'benmills/vimux'
 
-
 " "" Solarized Color Scheme for Vim -- may require additional config
 " Plugin 'altercation/vim-colors-solarized'
+
+" "" Another colorscheme
+" Plugin 'vim-scripts/wombat256.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -51,9 +53,16 @@ filetype plugin indent on    " required
 "}}}
 
 " Color scheme {{{
+"" Use solarized
 " set background=dark
 " " let g:solarized_termcolors=256
 " colorscheme solarized
+
+"" Use wombat
+" try
+"   colorscheme wombat245mod
+" catch
+" endtry
 "" }}}
 
 " Gvim Font Settings {{{
@@ -157,8 +166,10 @@ set pastetoggle=<F2>
 set viminfo='20,<2000,s10,h
 "" }}}
 
-"" FOLDING {{{
+" FOLDING {{{
+"" Use '{{{' and '}}}' for folds
 set foldmethod=marker
+
 "" Defines marker-based folds on buffer load, then uses syntax folding during
 "" the editing.
 "" TODO: update marker-based folds on save, use syntax folding while editing.
@@ -205,4 +216,3 @@ let g:Tex_DefaultTargetFormat='pdf'
 " address of YouCompleteMe conf
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 " }}}
-
