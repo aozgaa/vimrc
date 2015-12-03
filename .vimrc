@@ -1,9 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-
-"""""""""""""""""""""""" Vundle """""""""""""""""""""""
-
+" Vundle {{{
 "" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -14,26 +12,11 @@ Plugin 'gmarik/Vundle.vim'
 "" sensible defaults
 Plugin 'tpope/vim-sensible'
 
-"" A Git Interface
-" Plugin 'tpope/vim-fugitive'
-
-"" Matching parentheses but more general
-" Plugin 'tpope/vim-surround'
-
-"" Use <C-h>, <C-j> to navigate across both vim panes and tmux panes
-"" REQUIRES Addition config in tmux.conf -- see github page
-Plugin 'christoomey/vim-tmux-navigator'
-"" If vim is running inside tmux, allows easy creation of new shell panes
-" Plugin 'benmills/vimux'
-
 "" All-inclusive autocomplete plugin
 Plugin 'Valloric/YouCompleteMe'
 
 "" Rainbow parentheses for lisp
 Plugin 'vim-scripts/vim-niji'
-
-"" matching parentheses editing for lisp
-" Plugin 'vim-scripts/paredit.vim'
 
 "" Large suite of tools to ease latex editing in vim
 "" (on Github)
@@ -41,25 +24,44 @@ Plugin 'vim-scripts/vim-niji'
 "" (on Sourceforge)
 Bundle 'git://git.code.sf.net/p/vim-latex/vim-latex'
 
-"" Solarized Color Scheme for Vim -- may require additional config
-Plugin 'altercation/vim-colors-solarized'
+"" matching parentheses editing for lisp
+" Plugin 'vim-scripts/paredit.vim'
+
+"" A Git Interface
+" Plugin 'tpope/vim-fugitive'
+
+"" Matching parentheses but more general
+" Plugin 'tpope/vim-surround'
+
+" "" Use <C-h>, <C-j> to navigate across both vim panes and tmux panes
+" "" REQUIRES additional config in tmux.conf -- see github page
+" Plugin 'christoomey/vim-tmux-navigator'
+
+" "" If vim is running inside tmux, allows easy creation of new shell panes
+" Plugin 'benmills/vimux'
+
+
+" "" Solarized Color Scheme for Vim -- may require additional config
+" Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+"}}}
 
-"""""""""""""""""""""" Color scheme """"""""""""""""""""""""
-set background=dark
-" let g:solarized_termcolors=256
-colorscheme solarized
+" Color scheme {{{
+" set background=dark
+" " let g:solarized_termcolors=256
+" colorscheme solarized
+"" }}}
 
-"""""""""""""""""""""" Gvim Font Settings """""""""""""""""
-
+" Gvim Font Settings {{{
 " The number sets the font height
 set guifont=Monospace\ 16
+"" }}}
 
-""""""""""""""""""""" General Settings """"""""""""""""""""
+" General Settings {{{
 
 "" leader key is space
 let mapleader = ' '
@@ -153,9 +155,24 @@ set pastetoggle=<F2>
 
 "" set history
 set viminfo='20,<2000,s10,h
+"" }}}
 
+"" FOLDING {{{
+set foldmethod=marker
+"" Defines marker-based folds on buffer load, then uses syntax folding during
+"" the editing.
+"" TODO: update marker-based folds on save, use syntax folding while editing.
+"" TODO: need to figure out how to add in the marker-folds to the syntax folds.
+"" ALTERNATE IDEA: generate marker and syntax folds on save, load them into a
+"" manual fold editing session.
+" augroup vimrc
+"   au BufReadPre * setlocal foldmethod=marker
+"   au BufWinEnter * if &fdm == 'marker' | setlocal foldmethod=manual | endif
+" augroup END
 
-""""""""""""""" Language Specific Settings """"""""""""""""
+"" }}}
+
+" Language Specific Settings {{{
 
 "" send file contents to next pane in tmux
 "" (using for sending text between vim and a scheme repl)
@@ -171,9 +188,9 @@ augroup languages
     " Makefile indentation
     autocmd FileType make set ts=2
 augroup END
+"" }}}
 
-""""""""""""""""""" Latex-Suite Settings """"""""""""""""
-
+" Latex-Suite {{{
 " IMPORTANT: grep will sometimes skip displaying the file name if you
 " search in a single file. This will confuse Latex-Suite. Set your grep
 " program to always generate a file-name.
@@ -182,10 +199,10 @@ let g:tex_flavor='latex'
 
 "" default output type of compilation
 let g:Tex_DefaultTargetFormat='pdf'
+"" }}}
 
-
-"""""""""""""""" YouCompleteMe Settings """"""""""""""""
-
+" YouCompleteMe Settings {{{
 " address of YouCompleteMe conf
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+" }}}
 
