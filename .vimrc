@@ -1,7 +1,8 @@
 " SETUP INSTRUCTIONS {{{
 " 1) Get vundle:
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim ; vim +PluginInstall +qall
-" 2) 
+" 2) Make this .vimrc visible to vim (overwrites old .vimrc):
+" ln -s /path/to/repo/.vimr $HOME/.vimrc
 " }}}
 
 set nocompatible              " be iMproved, required
