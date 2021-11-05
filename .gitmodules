@@ -1,0 +1,15 @@
+[submodule "pack/SirVer/start/ultisnips"]
+	path = pack/SirVer/start/ultisnips
+	url = https://github.com/SirVer/ultisnips
+[submodule "pack/tpope/start/vim-fugitive"]
+	path = pack/tpope/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "pack/tpope/start/vim-sensible"]
+	path = pack/tpope/start/vim-sensible
+	url = https://github.com/tpope/vim-sensible
+[submodule "pack/tpope/start/vim-surround"]
+	path = pack/tpope/start/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "pack/vimwiki/start/vimwiki.git"]
+	path = pack/vimwiki/start/vimwiki.git
+	url = https://github.com/vimwiki/vimwiki.git
