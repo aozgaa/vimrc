@@ -57,7 +57,7 @@ let g:tex_flavor = 'latex'
   \ :nnoremap <leader><leader>
   \ :w<CR>:exec '!~/k9/k' shellescape(@%, 1)<CR>
 
-"" format hdl files on save
+"" format verilog files on save
 :au bufwrite *.v,*.vh,*.sv,*.svh call FormatVerilog()
 function! FormatVerilog()
     let l:winview = winsaveview()
