@@ -13,3 +13,6 @@
 [submodule "pack/vimwiki/start/vimwiki.git"]
 	path = pack/vimwiki/start/vimwiki.git
 	url = https://github.com/vimwiki/vimwiki.git
+[submodule "pack/systemverilog.vim"]
+	path = pack/systemverilog.vim
+	url = https://github.com/nachumk/systemverilog.vim
