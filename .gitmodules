@@ -16,3 +16,12 @@
 [submodule "pack/systemverilog.vim"]
 	path = pack/systemverilog.vim
 	url = https://github.com/nachumk/systemverilog.vim
+[submodule "pack/coc/start/coc.nvim"]
+	path = pack/coc/start/coc.nvim
+	url = https://github.com/neoclide/coc.nvim.git
+[submodule "pack/mattn/start/emmet-vim"]
+	path = pack/mattn/start/emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
+[submodule "pack/tpope/start/commentary"]
+	path = pack/tpope/start/commentary
+	url = https://tpope.io/vim/commentary.git
