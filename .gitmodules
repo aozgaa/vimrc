@@ -1,27 +1,36 @@
 [submodule "pack/SirVer/start/ultisnips"]
 	path = pack/SirVer/start/ultisnips
 	url = https://github.com/SirVer/ultisnips
+	branch = master
 [submodule "pack/tpope/start/vim-fugitive"]
 	path = pack/tpope/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
+	branch = master
 [submodule "pack/tpope/start/vim-sensible"]
 	path = pack/tpope/start/vim-sensible
 	url = https://github.com/tpope/vim-sensible
+	branch = master
 [submodule "pack/tpope/start/vim-surround"]
 	path = pack/tpope/start/vim-surround
 	url = https://github.com/tpope/vim-surround
+	branch = master
 [submodule "pack/vimwiki/start/vimwiki.git"]
 	path = pack/vimwiki/start/vimwiki.git
 	url = https://github.com/vimwiki/vimwiki.git
+	branch = master
 [submodule "pack/systemverilog.vim"]
 	path = pack/systemverilog.vim
 	url = https://github.com/nachumk/systemverilog.vim
+	branch = master
 [submodule "pack/coc/start/coc.nvim"]
 	path = pack/coc/start/coc.nvim
 	url = https://github.com/neoclide/coc.nvim.git
+	branch = release
 [submodule "pack/mattn/start/emmet-vim"]
 	path = pack/mattn/start/emmet-vim
 	url = https://github.com/mattn/emmet-vim.git
+	branch = master
 [submodule "pack/tpope/start/commentary"]
 	path = pack/tpope/start/commentary
 	url = https://tpope.io/vim/commentary.git
+	branch = master
