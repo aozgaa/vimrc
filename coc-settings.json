@@ -1,3 +1,5 @@
 {
-  "diagnostic.checkCurrentLine": true
+  "diagnostic.checkCurrentLine": true,
+  "clangd.enabled": true,
+  "clangd.compilationDatabasePath": "build"
 }
