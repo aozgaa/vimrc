@@ -5,6 +5,34 @@ cd ~/.vim
 git submodule update --init --recursive
 ```
 
+Update packages/plugins:
+```
+cd ~/.vim
+git pull --rebase
+git submodule sync --recursive
+git submodule update --init --recursive
+git submodule update --remote --recursive
+git status
+```
+
+If you want to save updated plugin versions in this repo:
+```
+cd ~/.vim
+git add .
+git commit -m "Update plugin submodules"
+```
+
+Inside Vim after updates (recommended):
+```vim
+:helptags ALL
+```
+
+Optional Coc maintenance:
+```vim
+:CocUpdate
+:CocInstall -sync coc-clangd coc-snippets
+```
+
 Optional: get [`k`](https://code.kx.com/q/learn/install/) for testing k code snippets.
 
 Optional: get [`iStyle`](https://github.com/thomasrussellmurphy/istyle-verilog-formatter).
