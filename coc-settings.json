@@ -4,5 +4,9 @@
   "clangd.compilationDatabaseCandidates": [
     "${workspaceFolder}/build",
     "${workspaceFolder}"
-  ]
+  ],
+  "zig.enabled": true,
+  "zig.startUpMessage": true,
+  "zig.path": "/usr/local/bin/zls",
+  "zig.debugLog": false
 }

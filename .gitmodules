@@ -34,3 +34,6 @@
 	path = pack/tpope/start/commentary
 	url = https://tpope.io/vim/commentary.git
 	branch = master
+[submodule "pack/ziglang/start/zig.vim"]
+	path = pack/ziglang/start/zig.vim
+	url = https://codeberg.org/ziglang/zig.vim
