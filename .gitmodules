@@ -37,3 +37,6 @@
 [submodule "pack/ziglang/start/zig.vim"]
 	path = pack/ziglang/start/zig.vim
 	url = https://codeberg.org/ziglang/zig.vim
+[submodule "pack/whonore/start/vim-sentencer"]
+	path = pack/whonore/start/vim-sentencer
+	url = git@github.com:whonore/vim-sentencer.git

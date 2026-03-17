@@ -23,6 +23,18 @@ set foldnestmax=10
 set nofoldenable
 set foldlevelstart=10
 
+" formatting options
+set textwidth=120
+let g:sentencer_textwidth = 0
+let g:sentencer_filetypes = ['markdown', 'text', 'gitcommit']
+
+augroup sentencerlocal
+  autocmd!
+  autocmd FileType markdown,gitcommit setlocal formatoptions+=n
+  autocmd FileType markdown,gitcommit let &l:formatlistpat =
+        \ '^\s*\d\+[.)]\s\+\|^\s*[-*+]\s\+\|^\s*\[[ xX]\]\s\+'
+augroup end
+
 " use PRIMARY (select) clipboard
 set clipboard=unnamedplus
 
