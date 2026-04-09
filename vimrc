@@ -35,8 +35,10 @@ augroup sentencerlocal
         \ '^\s*\d\+[.)]\s\+\|^\s*[-*+]\s\+\|^\s*\[[ xX]\]\s\+'
 augroup end
 
-" use PRIMARY (select) clipboard
-set clipboard=unnamedplus
+" use PRIMARY (select) and CLIPBOARD selections
+" macos ignores PRIMARY, so need to use CLIPBOARD
+" on linux, this overwrites middle-clicks and Ctrl-C
+set clipboard=unnamed,unnamedplus
 
 "" vimwiki
 let g:vimwiki_list = [{'path': '~/vimwiki/',
