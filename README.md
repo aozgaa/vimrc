@@ -22,6 +22,19 @@ For `clangd` support, either:
 1. Install `clangd` system-wide (package manager or source build).
 2. Let `coc` manage it: `:CocCommand clangd.install`.
 
+# Adding Plugins
+
+1) find a plugin to add, eg https://github.com/junegunn/fzf.vim
+2) make parent directories:
+```
+mkdir -p pack/junegunn/start/
+```
+3) add submodule
+```
+git submodule add git@github.com:junegunn/fzf.vim.git pack/junegunn/start/fzf.vim
+```
+4) do routine mainentance (see below)
+
 # Routine Maintenance
 
 ## Update Repository and Plugins

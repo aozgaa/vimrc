@@ -83,6 +83,12 @@ function! FormatVerilog()
   call winrestview(l:winview)
 endfunction
 
+" fzf
+" N.B. to use `fzf.vim` plugin, BOTH the fzf and fzf.vim plugins are needed
+" add macos `port(1)` location
+" TODO: find this path in a crossplatform way
+set runtimepath+=/opt/local/share/fzf/vim
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " coc.vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

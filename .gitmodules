@@ -40,3 +40,6 @@
 [submodule "pack/whonore/start/vim-sentencer"]
 	path = pack/whonore/start/vim-sentencer
 	url = git@github.com:whonore/vim-sentencer.git
+[submodule "pack/junegunn/start/fzf.vim"]
+	path = pack/junegunn/start/fzf.vim
+	url = git@github.com:junegunn/fzf.vim.git
