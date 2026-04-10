@@ -4,11 +4,17 @@ syntax on
 
 colorscheme desert
 
+" basic ui settings
 runtime macros/matchit.vim
 set showmatch " Shows matching brackets
 set ruler " Always shows location in file (line#)
 set hlsearch " highlight search results
 set number
+
+" use PRIMARY (select) and CLIPBOARD selections
+" macos ignores PRIMARY, so need to use CLIPBOARD
+" on linux, this overwrites middle-clicks and Ctrl-C
+set clipboard=unnamed,unnamedplus
 
 " tab settings
 set tabstop=2
@@ -28,6 +34,7 @@ set textwidth=120
 let g:sentencer_textwidth = 0
 let g:sentencer_filetypes = ['markdown', 'text', 'gitcommit']
 
+" sentence-based newline formatting
 augroup sentencerlocal
   autocmd!
   autocmd FileType markdown,gitcommit setlocal formatoptions+=n
@@ -35,12 +42,7 @@ augroup sentencerlocal
         \ '^\s*\d\+[.)]\s\+\|^\s*[-*+]\s\+\|^\s*\[[ xX]\]\s\+'
 augroup end
 
-" use PRIMARY (select) and CLIPBOARD selections
-" macos ignores PRIMARY, so need to use CLIPBOARD
-" on linux, this overwrites middle-clicks and Ctrl-C
-set clipboard=unnamed,unnamedplus
-
-"" vimwiki
+" vimwiki
 let g:vimwiki_list = [{'path': '~/vimwiki/',
       \ 'syntax': 'markdown', 'ext': '.md'}]
 
