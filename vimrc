@@ -1,48 +1,55 @@
 set nocompatible
 filetype plugin on
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" native settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on
 
 colorscheme desert
 
-" basic ui settings
+"" basic ui settings
 runtime macros/matchit.vim
 set showmatch " Shows matching brackets
 set ruler " Always shows location in file (line#)
 set hlsearch " highlight search results
 set number
 
-" use PRIMARY (select) and CLIPBOARD selections
-" macos ignores PRIMARY, so need to use CLIPBOARD
-" on linux, this overwrites middle-clicks and Ctrl-C
-set clipboard=unnamed,unnamedplus
-
-" tab settings
+"" tab settings
 set tabstop=2
 set shiftwidth=2
 set smarttab " Autotabs for certain code
 set expandtab " insert spaces instead of tab character
 set cinoptions=l1 " reasonable case indentation
 
-" indent-based folds
+"" indent-based folds
 set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevelstart=10
 
-" formatting options
+" use PRIMARY (select) and CLIPBOARD selections
+" macos ignores PRIMARY, so need to use CLIPBOARD
+" on linux, this overwrites middle-clicks and Ctrl-C
+set clipboard=unnamed,unnamedplus
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-sentencer
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set textwidth=120
 let g:sentencer_textwidth = 0
 let g:sentencer_filetypes = ['markdown', 'text', 'gitcommit']
 
-" sentence-based newline formatting
+" list wrapping for vim-sentencer
 augroup sentencerlocal
   autocmd!
   autocmd FileType markdown,gitcommit setlocal formatoptions+=n
-  autocmd FileType markdown,gitcommit let &l:formatlistpat =
-        \ '^\s*\d\+[.)]\s\+\|^\s*[-*+]\s\+\|^\s*\[[ xX]\]\s\+'
+  autocmd FileType markdown,gitcommit let &formatlistpat='^\s*\d\+\.\s\+\|^\s*[-*+]\s\+\|^\[^\ze[^\]]\+\]:'
 augroup end
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vimwiki
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vimwiki_list = [{'path': '~/vimwiki/',
       \ 'syntax': 'markdown', 'ext': '.md'}]
 
@@ -53,10 +60,14 @@ augroup vimwikigroup
   autocmd BufRead,BufNewFile diary.wiki VimwikiDiaryGenerateLinks
 augroup end
 
-"" vimtex
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vimtex
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:tex_flavor = 'latex'
 
-"" clang-format.py
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" clang-format.py
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " if has('python3')
 "   map <C-I> :py3f /usr/share/clang/clang-format.py<cr>
 "   imap <C-I> <c-o>:py3f /usr/share/clang/clang-format.py<cr>
@@ -70,20 +81,28 @@ let g:tex_flavor = 'latex'
 "     autocmd BufWritePre *.h,*.c,*.cc,*.cpp call Clangformatonsave()
 " endif
 
-"" k autorun
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" k (apl descendent language)
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :au bufread,bufnewfile *.k
       \ :nnoremap <leader><leader>
       \ :w<CR>:exec '!~/k9/k' shellescape(@%, 1)<CR>
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" verilog
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "" format verilog files on save
-:au bufwrite *.v,*.vh,*.sv,*.svh call FormatVerilog()
 function! FormatVerilog()
   let l:winview = winsaveview()
   :%!iStyle
   call winrestview(l:winview)
 endfunction
 
-" fzf
+:au bufwrite *.v,*.vh,*.sv,*.svh call FormatVerilog()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" fzf + fzf.vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " N.B. to use `fzf.vim` plugin, BOTH the fzf and fzf.vim plugins are needed
 " add macos `port(1)` location
 " TODO: find this path in a crossplatform way
